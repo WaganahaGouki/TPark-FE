@@ -14,6 +14,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {HttpClientModule} from "@angular/common/http";
 import { MapComponent } from './map/map.component';
 import {RouterModule, Routes} from "@angular/router";
+import {GoogleMapsModule} from "@angular/google-maps";
 
 const routes: Routes = [
     {
@@ -47,7 +48,8 @@ const routes: Routes = [
     FormsModule,
     MatButtonModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
