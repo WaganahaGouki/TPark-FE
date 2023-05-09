@@ -11,11 +11,30 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
+import {HttpClientModule} from "@angular/common/http";
+import { MapComponent } from './map/map.component';
+import {RouterModule, Routes} from "@angular/router";
+
+const routes: Routes = [
+    {
+      path: '',
+      component: RegisterUserComponent
+    },
+    {
+      path: 'map',
+      component: MapComponent
+    },
+    /*{
+      path: '**',
+      component: NotFoundComponent
+    }*/
+]
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterUserComponent
+    RegisterUserComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +45,9 @@ import {MatButtonModule} from "@angular/material/button";
     MatIconModule,
     MatCheckboxModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
