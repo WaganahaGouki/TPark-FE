@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {User} from "./user";
-import {environment} from "../environments/environment";
+import {User} from "../models/user";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private apiServerUrl = environment.apiBaseUrl;
+  private readonly apiServerUrl = environment.apiBaseUrl;
   constructor(private http: HttpClient) { }
 
   public getUsers(): Observable<User[]> {
