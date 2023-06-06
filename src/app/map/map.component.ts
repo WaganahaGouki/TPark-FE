@@ -13,4 +13,8 @@ export class MapComponent {
       lat: 45.755968,
       lng: 21.228967
     };
+
+    public options: google.maps.MapOptions = {
+      streetViewControl: false
+    };
 }
