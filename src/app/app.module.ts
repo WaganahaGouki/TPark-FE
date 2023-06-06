@@ -9,7 +9,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MatInputModule} from "@angular/material/input";
 import {MatIconModule} from "@angular/material/icon";
 import {MatCheckboxModule} from "@angular/material/checkbox";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {HttpClientModule} from "@angular/common/http";
 import { MapComponent } from './map/map.component';
@@ -17,6 +17,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {GoogleMapsModule} from "@angular/google-maps";
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 const routes: Routes = [
     {
@@ -53,7 +54,9 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),
     GoogleMapsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

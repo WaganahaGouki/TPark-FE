@@ -1,10 +1,59 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {RegisterService} from "../services/register.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'register-user',
   templateUrl: './register-user.component.html',
   styleUrls: ['./register-user.component.css']
 })
-export class RegisterUserComponent {
+export class RegisterUserComponent implements OnInit{
+  registerForm!: FormGroup;
+  loginForm!: FormGroup;
 
+  constructor(private http: HttpClient,
+              private registerService: RegisterService,
+              private formBuilder: FormBuilder,
+              private router: Router,
+              private snackBar: MatSnackBar) { }
+
+  ngOnInit(): void {
+    this.initializeForm();
+  }
+
+  private initializeForm() {
+    this.registerForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    });
+
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    })
+  }
+
+  registerUser() {
+    if(this.registerForm.valid) {
+      const user = this.registerForm.value;
+      this.registerService.register(user).subscribe({
+        next: (response) => {
+          console.log('User successfully registered!');
+          this.snackBar.open('User successfully registered!', 'Close', {duration: 3000});
+        },
+        error: (error) => {
+          console.error('User did not register!', error);
+          this.snackBar.open('User did not register!', 'Close', {duration: 3000});
+        }
+      });
+    }
+  }
+
+  loginUser() {
+
+  }
 }
