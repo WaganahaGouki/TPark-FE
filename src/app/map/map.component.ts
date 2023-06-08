@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'map',
@@ -6,15 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./map.component.css']
 })
 
-export class MapComponent {
-    public zoom = 14;
+export class MapComponent implements OnInit {
+    zoom = 15;
 
-    public position = {
-      lat: 45.755968,
-      lng: 21.228967
-    };
-
-    public options: google.maps.MapOptions = {
+    options: google.maps.MapOptions = {
       streetViewControl: false
     };
+
+    center!: google.maps.LatLngLiteral;
+
+    ngOnInit() {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.center = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        }
+      })
+    }
 }
