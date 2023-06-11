@@ -19,6 +19,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { NavigationComponent } from './navigation/navigation.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
+import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
     {
@@ -28,6 +29,10 @@ const routes: Routes = [
     {
       path: 'map',
       component: MapComponent
+    },
+    {
+      path: 'account',
+      component: AccountComponent
     },
     /*{
       path: '**',
@@ -40,7 +45,8 @@ const routes: Routes = [
     AppComponent,
     RegisterUserComponent,
     MapComponent,
-    NavigationComponent
+    NavigationComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
