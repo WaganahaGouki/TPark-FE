@@ -5,10 +5,10 @@
   width: 100%;
   height: calc(100% - 64px);
   display: block;
-  background-color: #303F9F;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: url("../../assets/login-background.png");
   overflow: hidden;
 }
 
@@ -16,6 +16,7 @@ mat-card {
   width: 30%;
   margin: 10% auto;
   border-radius: 8px;
+  background: mediumaquamarine;
 }
 mat-form-field, mat-checkbox {
   width: 80%;

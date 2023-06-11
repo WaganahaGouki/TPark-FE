@@ -15,9 +15,10 @@ import {HttpClientModule} from "@angular/common/http";
 import { MapComponent } from './map/map.component';
 import {RouterModule, Routes} from "@angular/router";
 import {GoogleMapsModule} from "@angular/google-maps";
-import { NavbarComponent } from './navbar/navbar.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { NavigationComponent } from './navigation/navigation.component';
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 const routes: Routes = [
     {
@@ -39,7 +40,7 @@ const routes: Routes = [
     AppComponent,
     RegisterUserComponent,
     MapComponent,
-    NavbarComponent
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +57,8 @@ const routes: Routes = [
     GoogleMapsModule,
     MatToolbarModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

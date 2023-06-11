@@ -1,0 +1,26 @@
+<mat-toolbar>
+  <div class="start">
+    <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div class="center">
+    <span>TPark</span>
+  </div>
+  <div class="end">
+    <button class="logout-button" mat-button color="warn" routerLink="/">LOG OUT</button>
+  </div>
+</mat-toolbar>
+<mat-drawer-container>
+  <mat-drawer #drawer mode="side">
+    <button mat-button class="menu-button" routerLink="/account">
+      <mat-icon>person</mat-icon>
+      <span>Account</span>
+    </button>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

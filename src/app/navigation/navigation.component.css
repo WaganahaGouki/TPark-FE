@@ -1,0 +1,29 @@
+.center {
+  margin: auto;
+}
+
+.mat-toolbar {
+  background-color: mediumaquamarine;
+}
+
+.logout-button {
+  background-color: white;
+}
+
+mat-drawer {
+  width: 200px;
+  border-right: none;
+  background: mediumaquamarine;
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+
+.content {
+  height: 100%;
+  overflow: auto;
+}
+
+mat-drawer-container {
+  height: 100%;
+}
