@@ -20,6 +20,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { NavigationComponent } from './navigation/navigation.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { AccountComponent } from './account/account.component';
+import { RequestParkingLotComponent } from './request-parking-lot/request-parking-lot.component';
 
 const routes: Routes = [
     {
@@ -34,6 +35,10 @@ const routes: Routes = [
       path: 'account',
       component: AccountComponent
     },
+    {
+      path: 'requestParkingLot',
+      component: RequestParkingLotComponent
+    },
     /*{
       path: '**',
       component: NotFoundComponent
@@ -46,7 +51,8 @@ const routes: Routes = [
     RegisterUserComponent,
     MapComponent,
     NavigationComponent,
-    AccountComponent
+    AccountComponent,
+    RequestParkingLotComponent
   ],
   imports: [
     BrowserModule,

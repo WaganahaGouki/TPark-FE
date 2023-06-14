@@ -6,7 +6,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {UpdateService} from "../services/update.service";
 
 @Component({
-  selector: 'app-account',
+  selector: 'account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css']
 })
