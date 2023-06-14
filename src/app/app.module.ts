@@ -21,6 +21,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { AccountComponent } from './account/account.component';
 import { RequestParkingLotComponent } from './request-parking-lot/request-parking-lot.component';
+import { ParkingLotsListComponent } from './parking-lots-list/parking-lots-list.component';
 
 const routes: Routes = [
     {
@@ -52,7 +53,8 @@ const routes: Routes = [
     MapComponent,
     NavigationComponent,
     AccountComponent,
-    RequestParkingLotComponent
+    RequestParkingLotComponent,
+    ParkingLotsListComponent
   ],
   imports: [
     BrowserModule,
