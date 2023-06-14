@@ -4,6 +4,7 @@ import {RegisterService} from "../services/register.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {LoginService} from "../services/login.service";
 
 @Component({
   selector: 'register-user',
@@ -16,6 +17,7 @@ export class RegisterUserComponent implements OnInit{
 
   constructor(private http: HttpClient,
               private registerService: RegisterService,
+              private loginService: LoginService,
               private formBuilder: FormBuilder,
               private router: Router,
               private snackBar: MatSnackBar) { }
@@ -54,6 +56,18 @@ export class RegisterUserComponent implements OnInit{
   }
 
   loginUser() {
-
+    if(this.loginForm.valid) {
+      const user = this.loginForm.value;
+      this.loginService.login(user).subscribe({
+        next: (response) => {
+          console.log('User successfully logged in!');
+          this.snackBar.open('User successfully logged in!', 'Close', {duration: 3000});
+        },
+        error: (error) => {
+          console.error('Wrong credentials!', error);
+          this.snackBar.open('Wrong credentials', 'Close', {duration: 3000});
+        }
+      });
+    }
   }
 }

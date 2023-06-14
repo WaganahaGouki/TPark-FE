@@ -23,4 +23,8 @@ export class MapComponent implements OnInit {
         }
       })
     }
+
+    loggedIn() {
+      return sessionStorage.getItem("email") != null;
+    }
 }

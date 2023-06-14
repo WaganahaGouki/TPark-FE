@@ -1,3 +1,3 @@
-<google-map height="calc(100% - 64px" width="100%" [center]="center" [zoom]="zoom" [options]="options">
+<google-map height="100%" width="100%" [center]="center" [zoom]="zoom" [options]="options" *ngIf="loggedIn()">
   <map-marker [position]="center"></map-marker>
 </google-map>

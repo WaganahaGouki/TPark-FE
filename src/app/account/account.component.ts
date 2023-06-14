@@ -46,4 +46,8 @@ export class AccountComponent implements OnInit{
       });
     }
   }
+
+  loggedIn() {
+    return sessionStorage.getItem("email") != null;
+  }
 }
