@@ -1,0 +1,41 @@
+.parking-lot-list {
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: whitesmoke;
+  overflow: hidden;
+}
+
+.parking-lot-card {
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+mat-card {
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 8px;
+  background: mediumaquamarine;
+}
+
+h3 {
+  color: white;
+}
+
+p {
+  color: white;
+}

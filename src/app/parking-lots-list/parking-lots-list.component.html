@@ -1,1 +1,19 @@
-<p>parking-lots-list works!</p>
+<div class="parking-lot-list">
+  <ul>
+    <div class="parking-lot-card" *ngFor="let parkingLot of parkingLots">
+      <mat-card class="mat-elevation-z12" *ngIf="loggedIn()">
+        <mat-card-content>
+          <h3>Name: {{parkingLot.name}}</h3>
+          <p>Zone: {{parkingLot.zone}}</p>
+          <p>Car slots: {{parkingLot.carSlots}}</p>
+          <p>Bus slots: {{parkingLot.busSlots}}</p>
+          <p>Handicap slots: {{parkingLot.handicapSlots}}</p>
+          <p>Price per hour: {{parkingLot.pricePerHour}}</p>
+          <div style="text-align: end">
+            <mat-icon class="end">local_parking</mat-icon>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </ul>
+</div>

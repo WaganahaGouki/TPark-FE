@@ -54,7 +54,7 @@ const routes: Routes = [
     NavigationComponent,
     AccountComponent,
     RequestParkingLotComponent,
-    ParkingLotsListComponent
+    ParkingLotsListComponent,
   ],
   imports: [
     BrowserModule,

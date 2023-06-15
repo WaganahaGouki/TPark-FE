@@ -1,3 +1,6 @@
-<google-map height="100%" width="100%" [center]="center" [zoom]="zoom" [options]="options" *ngIf="loggedIn()">
-  <map-marker [position]="center"></map-marker>
-</google-map>
+<div class="grid-container">
+  <google-map height="100%" width="100%" [center]="center" [zoom]="zoom" [options]="options" *ngIf="loggedIn()">
+    <map-marker [position]="center"></map-marker>
+  </google-map>
+  <parking-lots-list></parking-lots-list>
+</div>

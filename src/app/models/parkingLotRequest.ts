@@ -1,5 +1,5 @@
 export interface ParkingLotRequest {
   name: string;
-  lat: string;
-  lng: string;
+  lat: number;
+  lng: number;
 }
