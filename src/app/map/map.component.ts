@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {ParkingLotsService} from "../services/parking-lots.service";
+import {timeout} from "rxjs";
 
 @Component({
   selector: 'map',
@@ -7,24 +9,57 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class MapComponent implements OnInit {
-    zoom = 15;
+  constructor(private parkingLotsService: ParkingLotsService) { }
 
-    options: google.maps.MapOptions = {
-      streetViewControl: false
-    };
+  zoom = 15;
 
-    center!: google.maps.LatLngLiteral;
+  markers: any[] = [];
 
-    ngOnInit() {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.center = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        }
-      })
+  options: google.maps.MapOptions = {
+    streetViewControl: false
+  };
+
+  center!: google.maps.LatLngLiteral;
+
+  parkingIcon = "https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_lot_maps.png";
+
+  parkingLots!: any[];
+
+  ngOnInit() {
+    this.getAllParkingLots()
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.center = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      }
+    })
+  }
+
+  getAllParkingLots(): void {
+    this.parkingLotsService.getAllParkingLots().subscribe({
+      next: (response: any) => {
+        this.parkingLots = response.map((parkingLot: any) => ({
+          ...parkingLot
+        }));
+        this.setMarkers();
+      },
+      error: (error: any) => {
+        console.log(error);
+      },
+    });
+  }
+
+  loggedIn() {
+    return sessionStorage.getItem("email") != null;
+  }
+
+  setMarkers() {
+    for (let i = 0; i < this.parkingLots.length; i++) {
+      this.markers[i] = new google.maps.Marker({
+        position: {lat: this.parkingLots[i].lat, lng: this.parkingLots[i].lng},
+        icon: this.parkingIcon,
+        title: this.parkingLots[i].name
+      });
     }
-
-    loggedIn() {
-      return sessionStorage.getItem("email") != null;
-    }
+  }
 }
