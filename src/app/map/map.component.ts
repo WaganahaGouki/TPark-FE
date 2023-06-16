@@ -25,7 +25,9 @@ export class MapComponent implements OnInit {
 
   parkingLots!: any[];
 
-  toggleState: boolean = false;
+  toggleCarState: boolean = false;
+  toggleBusState: boolean = false;
+  toggleHandicapState: boolean = false;
 
   ngOnInit() {
     this.getAllParkingLots()
@@ -66,7 +68,7 @@ export class MapComponent implements OnInit {
   }
 
   carSlotDecrease(parkingLot: ParkingLot) {
-    if(!this.toggleState) {
+    if(!this.toggleCarState) {
       parkingLot.carSlots++;
     } else {
       parkingLot.carSlots--;
@@ -74,7 +76,7 @@ export class MapComponent implements OnInit {
   }
 
   busSlotDecrease(parkingLot: ParkingLot) {
-    if(!this.toggleState) {
+    if(!this.toggleBusState) {
       parkingLot.busSlots++;
     } else {
       parkingLot.busSlots--;
@@ -82,7 +84,7 @@ export class MapComponent implements OnInit {
   }
 
   handicapSlotDecrease(parkingLot: ParkingLot) {
-    if(!this.toggleState) {
+    if(!this.toggleHandicapState) {
       parkingLot.handicapSlots++;
     } else {
       parkingLot.handicapSlots--;
