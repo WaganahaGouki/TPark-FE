@@ -23,6 +23,7 @@ import { AccountComponent } from './account/account.component';
 import { RequestParkingLotComponent } from './request-parking-lot/request-parking-lot.component';
 import { ParkingLotRequestManagerComponent } from './parking-lot-request-manager/parking-lot-request-manager.component';
 import {NgOptimizedImage} from "@angular/common";
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
 const routes: Routes = [
   {
@@ -79,6 +80,7 @@ const routes: Routes = [
     MatSnackBarModule,
     MatSidenavModule,
     NgOptimizedImage,
+    MatSlideToggleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

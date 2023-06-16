@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ParkingLotsService} from "../services/parking-lots.service";
+import {ParkingLot} from "../models/parkingLot";
 
 @Component({
   selector: 'map',
@@ -23,6 +24,8 @@ export class MapComponent implements OnInit {
   parkingIcon = "https://developers.google.com/maps/documentation/javascript/examples/full/images/parking_lot_maps.png";
 
   parkingLots!: any[];
+
+  toggleState: boolean = false;
 
   ngOnInit() {
     this.getAllParkingLots()
@@ -59,6 +62,30 @@ export class MapComponent implements OnInit {
         icon: this.parkingIcon,
         title: this.parkingLots[i].name
       });
+    }
+  }
+
+  carSlotDecrease(parkingLot: ParkingLot) {
+    if(!this.toggleState) {
+      parkingLot.carSlots++;
+    } else {
+      parkingLot.carSlots--;
+    }
+  }
+
+  busSlotDecrease(parkingLot: ParkingLot) {
+    if(!this.toggleState) {
+      parkingLot.busSlots++;
+    } else {
+      parkingLot.busSlots--;
+    }
+  }
+
+  handicapSlotDecrease(parkingLot: ParkingLot) {
+    if(!this.toggleState) {
+      parkingLot.handicapSlots++;
+    } else {
+      parkingLot.handicapSlots--;
     }
   }
 }

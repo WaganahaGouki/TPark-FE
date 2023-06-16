@@ -38,10 +38,7 @@ mat-card {
   background: mediumaquamarine;
 }
 
-h3 {
-  color: white;
-}
-
-p {
+mat-slide-toggle {
+  margin: 5px auto;
   color: white;
 }

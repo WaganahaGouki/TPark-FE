@@ -17,6 +17,9 @@
             <p>Bus slots: {{parkingLot.busSlots}}</p>
             <p>Handicap slots: {{parkingLot.handicapSlots}}</p>
             <p>Price per hour: {{parkingLot.pricePerHour}}</p>
+            <mat-slide-toggle [(ngModel)]="toggleState" (change)="carSlotDecrease(parkingLot)">Car slot taken</mat-slide-toggle>
+            <mat-slide-toggle [(ngModel)]="toggleState" (change)="busSlotDecrease(parkingLot)">Bus slot taken</mat-slide-toggle>
+            <mat-slide-toggle [(ngModel)]="toggleState" (change)="handicapSlotDecrease(parkingLot)">Handicap slot taken</mat-slide-toggle>
             <div style="text-align: end">
               <mat-icon class="end">local_parking</mat-icon>
             </div>
