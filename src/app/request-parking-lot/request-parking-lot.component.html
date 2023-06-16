@@ -1,5 +1,5 @@
 <div class="request-parking-lot-page">
-  <mat-card class="mat-elevation-z12" *ngIf="loggedIn()">
+  <mat-card class="mat-elevation-z12" *ngIf="checkRole()">
     <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
       <mat-tab label="Enter new parking lot information">
         <mat-card-content>

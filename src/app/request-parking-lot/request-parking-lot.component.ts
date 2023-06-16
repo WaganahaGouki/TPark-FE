@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {RequestParkingLotService} from "../services/request-parking-lot.service";
@@ -13,8 +12,7 @@ import {RequestParkingLotService} from "../services/request-parking-lot.service"
 export class RequestParkingLotComponent implements OnInit {
   requestParkingLotForm!: FormGroup;
 
-  constructor(private http: HttpClient,
-              private requestParkingLotService: RequestParkingLotService,
+  constructor(private requestParkingLotService: RequestParkingLotService,
               private formBuilder: FormBuilder,
               private router: Router,
               private snackBar: MatSnackBar) { }
@@ -31,8 +29,8 @@ export class RequestParkingLotComponent implements OnInit {
     })
   }
 
-  loggedIn() {
-    return sessionStorage.getItem("email") != null;
+  checkRole() {
+    return sessionStorage.getItem("role") == "USER";
   }
 
   requestParkingLot() {

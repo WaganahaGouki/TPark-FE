@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ParkingLotsService} from "../services/parking-lots.service";
-import {timeout} from "rxjs";
 
 @Component({
   selector: 'map',
@@ -49,8 +48,8 @@ export class MapComponent implements OnInit {
     });
   }
 
-  loggedIn() {
-    return sessionStorage.getItem("email") != null;
+  checkRole() {
+    return sessionStorage.getItem("role") == "USER"
   }
 
   setMarkers() {

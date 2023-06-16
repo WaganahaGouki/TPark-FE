@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {UpdateService} from "../services/update.service";
@@ -13,8 +12,7 @@ import {UpdateService} from "../services/update.service";
 export class AccountComponent implements OnInit{
   updateForm!: FormGroup;
 
-  constructor(private http: HttpClient,
-              private updateService: UpdateService,
+  constructor(private updateService: UpdateService,
               private formBuilder: FormBuilder,
               private router: Router,
               private snackBar: MatSnackBar) { }
@@ -47,7 +45,7 @@ export class AccountComponent implements OnInit{
     }
   }
 
-  loggedIn() {
-    return sessionStorage.getItem("email") != null;
+  checkRole() {
+    return sessionStorage.getItem("role") == "USER";
   }
 }

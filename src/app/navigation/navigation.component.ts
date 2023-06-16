@@ -9,7 +9,11 @@ export class NavigationComponent implements OnInit {
   ngOnInit(): void { }
 
   loggedIn() {
-    return sessionStorage.getItem("email") != null;
+    return sessionStorage.getItem("role") != null;
+  }
+
+  checkRole() {
+    return sessionStorage.getItem("role") == "USER";
   }
 
   logout() {

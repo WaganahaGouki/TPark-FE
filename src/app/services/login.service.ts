@@ -3,6 +3,7 @@ import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
 import {Login} from "../models/login";
+import {Role} from "../models/role";
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,11 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  public login(login: Login): Observable<Login>{
-    return this.http.get<Login>(`${this.apiServerUrl}/login/${login.email}/${login.password}`)
-      .pipe(map(login => {
-        sessionStorage.setItem("email", JSON.stringify(login.email));
-        return login;
+  public login(login: Login): Observable<Role>{
+    return this.http.get<Role>(`${this.apiServerUrl}/user/role/${login.email}`)
+      .pipe(map(role => {
+        sessionStorage.setItem("role", role.name)
+        return role;
       }))
   }
 }

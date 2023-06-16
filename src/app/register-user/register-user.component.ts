@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
 import {RegisterService} from "../services/register.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
@@ -15,8 +14,7 @@ export class RegisterUserComponent implements OnInit{
   registerForm!: FormGroup;
   loginForm!: FormGroup;
 
-  constructor(private http: HttpClient,
-              private registerService: RegisterService,
+  constructor(private registerService: RegisterService,
               private loginService: LoginService,
               private formBuilder: FormBuilder,
               private router: Router,
