@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {Login} from "../models/login";
-import {map, Observable} from "rxjs";
+import {Observable} from "rxjs";
 import {ParkingLot} from "../models/parkingLot";
 
 @Injectable({
@@ -15,5 +14,9 @@ export class ParkingLotsService {
 
   public getAllParkingLots(): Observable<ParkingLot>{
     return this.http.get<ParkingLot>(`${this.apiServerUrl}/parkingLot/all`)
+  }
+
+  public addParkingLot(parkingLot: ParkingLot): Observable<ParkingLot>{
+    return this.http.post<ParkingLot>(`${this.apiServerUrl}/parkingLot/add`, parkingLot)
   }
 }

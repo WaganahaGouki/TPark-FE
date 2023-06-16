@@ -21,28 +21,34 @@ import { NavigationComponent } from './navigation/navigation.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import { AccountComponent } from './account/account.component';
 import { RequestParkingLotComponent } from './request-parking-lot/request-parking-lot.component';
+import { ParkingLotRequestManagerComponent } from './parking-lot-request-manager/parking-lot-request-manager.component';
+import {NgOptimizedImage} from "@angular/common";
 
 const routes: Routes = [
-    {
-      path: '',
-      component: RegisterUserComponent
-    },
-    {
-      path: 'map',
-      component: MapComponent
-    },
-    {
-      path: 'account',
-      component: AccountComponent
-    },
-    {
-      path: 'requestParkingLot',
-      component: RequestParkingLotComponent
-    },
-    /*{
-      path: '**',
-      component: NotFoundComponent
-    }*/
+  {
+    path: '',
+    component: RegisterUserComponent
+  },
+  {
+    path: 'map',
+    component: MapComponent
+  },
+  {
+    path: 'account',
+    component: AccountComponent
+  },
+  {
+    path: 'requestParkingLot',
+    component: RequestParkingLotComponent
+  },
+  {
+    path: 'addParkingLot',
+    component: ParkingLotRequestManagerComponent
+  },
+  /*{
+    path: '**',
+    component: NotFoundComponent
+  }*/
 ]
 
 @NgModule({
@@ -53,6 +59,7 @@ const routes: Routes = [
     NavigationComponent,
     AccountComponent,
     RequestParkingLotComponent,
+    ParkingLotRequestManagerComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +78,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatSnackBarModule,
     MatSidenavModule,
+    NgOptimizedImage,
   ],
   providers: [],
   bootstrap: [AppComponent]

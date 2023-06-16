@@ -1,0 +1,64 @@
+<div class="grid-container">
+  <div class="request-manager">
+    <mat-card class="mat-elevation-z12 add-request-card" *ngIf="!checkRole()">
+      <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+        <mat-tab label="Enter new parking lot information">
+          <mat-card-content>
+            <form action="" [formGroup]="addParkingLotForm">
+              <mat-form-field>
+                <input matInput placeholder="Name" formControlName="name">
+                <mat-icon matSuffix>local_parking</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Latitude" formControlName="lat">
+                <mat-icon matSuffix>place</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Longitude" formControlName="lng">
+                <mat-icon matSuffix>place</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Car slots" formControlName="car">
+                <mat-icon matSuffix>directions_car</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Bus slots" formControlName="bus">
+                <mat-icon matSuffix>directions_bus</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Handicap slots" formControlName="handicap">
+                <mat-icon matSuffix>directions_car</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Zone" formControlName="zone">
+                <mat-icon matSuffix>event</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Price per hour" formControlName="price">
+                <mat-icon matSuffix>attach_money</mat-icon>
+              </mat-form-field>
+              <button mat-raised-button color="primary" class="login-button" (click)="addParkingLot()">Send</button>
+            </form>
+          </mat-card-content>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card>
+  </div>
+  <div class="parking-lot-requests-list">
+    <h2 style="text-align: center">Parking lot requests</h2>
+    <ul>
+      <div class="parking-lot-request-card" *ngFor="let parkingLotRequest of parkingLotsRequests">
+        <mat-card class="mat-elevation-z12 request-card" *ngIf="!checkRole()">
+          <mat-card-content>
+            <h2 style="text-align: center">{{parkingLotRequest.name}}</h2>
+            <p>Latitude: {{parkingLotRequest.lat}}</p>
+            <p>Longitude: {{parkingLotRequest.lng}}</p>
+            <div style="text-align: end">
+              <mat-icon class="end">local_parking</mat-icon>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </ul>
+  </div>
+</div>

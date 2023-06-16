@@ -15,4 +15,8 @@ export class RequestParkingLotService {
   public requestParkingLot(parkingLotRequest: ParkingLotRequest): Observable<ParkingLotRequest> {
     return this.http.post<ParkingLotRequest>(`${this.apiServerUrl}/parkingLotRequest/add`, parkingLotRequest);
   }
+
+  public getAllParkingLotRequests(): Observable<ParkingLotRequest> {
+    return this.http.get<ParkingLotRequest>(`${this.apiServerUrl}/parkingLotRequest/all`)
+  }
 }

@@ -1,6 +1,6 @@
 <mat-toolbar>
   <div class="start">
-    <button mat-icon-button class="example-icon" (click)="drawer.toggle()" *ngIf="loggedIn()">
+    <button mat-icon-button class="example-icon" (click)="drawer.toggle()" *ngIf="checkRole()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
