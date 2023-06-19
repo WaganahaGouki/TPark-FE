@@ -25,10 +25,6 @@ export class MapComponent implements OnInit {
 
   parkingLots!: any[];
 
-  toggleCarState: boolean = false;
-  toggleBusState: boolean = false;
-  toggleHandicapState: boolean = false;
-
   ngOnInit() {
     this.getAllParkingLots()
     navigator.geolocation.getCurrentPosition((position) => {
@@ -43,8 +39,15 @@ export class MapComponent implements OnInit {
     this.parkingLotsService.getAllParkingLots().subscribe({
       next: (response: any) => {
         this.parkingLots = response.map((parkingLot: any) => ({
-          ...parkingLot
+          ...parkingLot,
+          toggleCarState: false,
+          toggleBusState: false,
+          toggleHandicapState: false,
+          id: 0
         }));
+        for (let i = 1; i <= this.parkingLots.length; i++) {
+          this.parkingLots[i].id = i;
+        }
         this.setMarkers();
       },
       error: (error: any) => {
@@ -68,7 +71,7 @@ export class MapComponent implements OnInit {
   }
 
   carSlotDecrease(parkingLot: ParkingLot) {
-    if(!this.toggleCarState) {
+    if(!parkingLot.toggleCarState) {
       parkingLot.carSlots++;
     } else {
       parkingLot.carSlots--;
@@ -76,7 +79,7 @@ export class MapComponent implements OnInit {
   }
 
   busSlotDecrease(parkingLot: ParkingLot) {
-    if(!this.toggleBusState) {
+    if(!parkingLot.toggleBusState) {
       parkingLot.busSlots++;
     } else {
       parkingLot.busSlots--;
@@ -84,7 +87,7 @@ export class MapComponent implements OnInit {
   }
 
   handicapSlotDecrease(parkingLot: ParkingLot) {
-    if(!this.toggleHandicapState) {
+    if(!parkingLot.toggleHandicapState) {
       parkingLot.handicapSlots++;
     } else {
       parkingLot.handicapSlots--;
