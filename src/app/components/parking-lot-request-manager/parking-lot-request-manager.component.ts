@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {RequestParkingLotService} from "../services/request-parking-lot.service";
-import {ParkingLotsService} from "../services/parking-lots.service";
+import {RequestParkingLotService} from "../../services/request-parking-lot.service";
+import {ParkingLotsService} from "../../services/parking-lots.service";
 
 @Component({
   selector: 'parking-lot-request-manager',

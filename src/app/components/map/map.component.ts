@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ParkingLotsService} from "../services/parking-lots.service";
-import {ParkingLot} from "../models/parkingLot";
+import {ParkingLotsService} from "../../services/parking-lots.service";
+import {ParkingLot} from "../../models/parkingLot";
 
 @Component({
   selector: 'map',
@@ -12,6 +12,8 @@ export class MapComponent implements OnInit {
   constructor(private parkingLotsService: ParkingLotsService) { }
 
   zoom = 15;
+
+  title = "Current location";
 
   markers: any[] = [];
 
@@ -42,12 +44,8 @@ export class MapComponent implements OnInit {
           ...parkingLot,
           toggleCarState: false,
           toggleBusState: false,
-          toggleHandicapState: false,
-          id: 0
+          toggleHandicapState: false
         }));
-        for (let i = 1; i <= this.parkingLots.length; i++) {
-          this.parkingLots[i].id = i;
-        }
         this.setMarkers();
       },
       error: (error: any) => {

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {RequestParkingLotService} from "../services/request-parking-lot.service";
+import {RequestParkingLotService} from "../../services/request-parking-lot.service";
 
 @Component({
   selector: 'request-parking-lot',

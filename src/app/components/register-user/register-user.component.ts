@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {RegisterService} from "../services/register.service";
+import {RegisterService} from "../../services/register.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {LoginService} from "../services/login.service";
+import {LoginService} from "../../services/login.service";
 import {Router} from "@angular/router";
 
 @Component({

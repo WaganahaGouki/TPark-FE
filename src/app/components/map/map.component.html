@@ -1,8 +1,8 @@
 <div class="grid-container">
   <google-map height="100%" width="100%" [center]="center" [zoom]="zoom" [options]="options" *ngIf="checkRole()">
-    <map-marker [position]="center"></map-marker>
+    <map-marker [position]="center" [title]="title"></map-marker>
     <div *ngFor="let marker of markers">
-      <map-marker [position]="marker.position" [icon]="marker.icon" [title]="marker.title" [label]="marker.title"></map-marker>
+      <map-marker [position]="marker.position" [icon]="marker.icon" [title]="marker.title"></map-marker>
     </div>
   </google-map>
   <div class="parking-lot-list">
