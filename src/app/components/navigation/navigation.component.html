@@ -5,7 +5,7 @@
     </button>
   </div>
   <div class="center">
-    <span>TPark</span>
+    <span>TmPark</span>
   </div>
   <div class="end">
     <button class="logout-button" mat-button color="warn" routerLink="/" *ngIf="loggedIn()" (click)="logout()">LOG OUT</button>
@@ -15,7 +15,7 @@
   <mat-drawer #drawer mode="side">
     <button mat-button class="menu-button" routerLink="/account" *ngIf="checkRole()">
       <mat-icon>person</mat-icon>
-      <span>Account</span>
+      <span>Edit account info</span>
     </button>
     <button mat-button class="menu-button" routerLink="/requestParkingLot" *ngIf="checkRole()">
       <mat-icon>not_listed_location</mat-icon>
