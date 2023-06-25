@@ -35,8 +35,8 @@ export class ParkingLotDeleteComponent implements OnInit {
           this.snackBar.open('Parking lot successfully deleted!', 'Close', {duration: 3000});
         },
         error: (error) => {
-          console.error('Parking lot did not deleted!', error);
-          this.snackBar.open('Parking lot did not deleted!', 'Close', {duration: 3000});
+          console.error('Parking lot did not delete!', error);
+          this.snackBar.open('Parking lot did not delete!', 'Close', {duration: 3000});
         }
       });
     }

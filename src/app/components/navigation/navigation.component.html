@@ -37,6 +37,10 @@
       <mat-icon>location_off</mat-icon>
       <span>Delete parking lot</span>
     </button>
+    <button mat-button class="menu-button" routerLink="/deleteParkingLotRequest" *ngIf="!checkRole()">
+      <mat-icon>location_off</mat-icon>
+      <span>Delete parking lot request</span>
+    </button>
   </mat-drawer>
   <mat-drawer-content>
     <div class="content">

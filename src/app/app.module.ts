@@ -28,6 +28,7 @@ import {NgOptimizedImage} from "@angular/common";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import { ParkingLotUpdateComponent } from './components/parking-lot-update/parking-lot-update.component';
 import { ParkingLotDeleteComponent } from './components/parking-lot-delete/parking-lot-delete.component';
+import { ParkingLotRequestDeleteComponent } from './components/parking-lot-request-delete/parking-lot-request-delete.component';
 
 const routes: Routes = [
   {
@@ -58,6 +59,10 @@ const routes: Routes = [
     path: 'deleteParkingLot',
     component: ParkingLotDeleteComponent
   },
+  {
+    path: 'deleteParkingLotRequest',
+    component: ParkingLotRequestDeleteComponent
+  },
   /*{
     path: '**',
     component: NotFoundComponent
@@ -75,6 +80,7 @@ const routes: Routes = [
     ParkingLotAddComponent,
     ParkingLotUpdateComponent,
     ParkingLotDeleteComponent,
+    ParkingLotRequestDeleteComponent
   ],
   imports: [
     BrowserModule,
