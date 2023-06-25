@@ -68,7 +68,24 @@ export class RegisterUserComponent implements OnInit{
         },
         error: (error) => {
           console.error('Wrong credentials!', error);
-          this.snackBar.open('Wrong credentials', 'Close', {duration: 3000});
+          this.snackBar.open('Wrong credentials!', 'Close', {duration: 3000});
+        }
+      });
+    }
+  }
+
+  login() {
+    if(this.loginForm.valid) {
+      const user = this.loginForm.value;
+      this.loginService.loginUser(user).subscribe({
+        next: (response) => {
+          this.loginUser();
+          console.log('User successfully logged in!');
+          this.snackBar.open('User successfully logged in!', 'Close', {duration: 3000});
+        },
+        error: (error) => {
+          console.error('Wrong credentials!', error);
+          this.snackBar.open('Wrong credentials!', 'Close', {duration: 3000});
         }
       });
     }
