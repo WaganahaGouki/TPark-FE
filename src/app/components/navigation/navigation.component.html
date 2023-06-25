@@ -1,6 +1,6 @@
 <mat-toolbar>
   <div class="start">
-    <button mat-icon-button class="example-icon" (click)="drawer.toggle()" *ngIf="checkRole()">
+    <button mat-icon-button class="example-icon" (click)="drawer.toggle()" *ngIf="loggedIn()">
       <mat-icon>menu</mat-icon>
     </button>
   </div>
@@ -24,6 +24,14 @@
     <button mat-button class="menu-button" routerLink="/map" *ngIf="checkRole()">
       <mat-icon>map</mat-icon>
       <span>Map</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/addParkingLot" *ngIf="!checkRole()">
+      <mat-icon>not_listed_location</mat-icon>
+      <span>Add parking lot</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/updateParkingLot" *ngIf="!checkRole()">
+      <mat-icon>save</mat-icon>
+      <span>Update parking lot</span>
     </button>
   </mat-drawer>
   <mat-drawer-content>

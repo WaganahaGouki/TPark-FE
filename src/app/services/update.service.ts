@@ -13,6 +13,6 @@ export class UpdateService {
   constructor(private http: HttpClient) { }
 
   public update(register: Register): Observable<Register> {
-    return this.http.put<Register>(`${this.apiServerUrl}/user/update`, register);
+    return this.http.put<Register>(`${this.apiServerUrl}/user/update/${sessionStorage.getItem("email")}/${register.username}/${register.email}/${register.password}`, register);
   }
 }

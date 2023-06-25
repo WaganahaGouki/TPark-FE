@@ -17,6 +17,7 @@ export class LoginService {
     return this.http.get<Role>(`${this.apiServerUrl}/user/role/${login.email}`)
       .pipe(map(role => {
         sessionStorage.setItem("role", role.name)
+        sessionStorage.setItem("email", login.email)
         return role;
       }))
   }

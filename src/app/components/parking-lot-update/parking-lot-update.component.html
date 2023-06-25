@@ -1,0 +1,45 @@
+<div class="request-manager">
+  <mat-card class="mat-elevation-z12 update-request-card" *ngIf="!checkRole()">
+    <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+      <mat-tab label="Enter new parking lot information">
+        <mat-card-content>
+          <form action="" [formGroup]="updateParkingLotForm">
+            <mat-form-field>
+              <input matInput placeholder="Name" formControlName="name">
+              <mat-icon matSuffix>local_parking</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Latitude" formControlName="lat">
+              <mat-icon matSuffix>place</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Longitude" formControlName="lng">
+              <mat-icon matSuffix>place</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Car slots" formControlName="carSlots">
+              <mat-icon matSuffix>directions_car</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Bus slots" formControlName="busSlots">
+              <mat-icon matSuffix>directions_bus</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Handicap slots" formControlName="handicapSlots">
+              <mat-icon matSuffix>directions_car</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Zone" formControlName="zone">
+              <mat-icon matSuffix>event</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Price per hour" formControlName="pricePerHour">
+              <mat-icon matSuffix>attach_money</mat-icon>
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="login-button" (click)="updateParkingLot()">Save</button>
+          </form>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>
