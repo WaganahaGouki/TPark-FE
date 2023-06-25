@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ParkingLotsService} from "../../services/parking-lots.service";
 import {ParkingLot} from "../../models/parkingLot";
+import {ParkingLotListItem} from "../../models/parkingLotListItem";
 
 @Component({
   selector: 'map',
@@ -68,7 +69,7 @@ export class MapComponent implements OnInit {
     }
   }
 
-  carSlotDecrease(parkingLot: ParkingLot) {
+  carSlotDecrease(parkingLot: ParkingLotListItem) {
     if(!parkingLot.toggleCarState) {
       parkingLot.carSlots++;
     } else {
@@ -76,7 +77,7 @@ export class MapComponent implements OnInit {
     }
   }
 
-  busSlotDecrease(parkingLot: ParkingLot) {
+  busSlotDecrease(parkingLot: ParkingLotListItem) {
     if(!parkingLot.toggleBusState) {
       parkingLot.busSlots++;
     } else {
@@ -84,7 +85,7 @@ export class MapComponent implements OnInit {
     }
   }
 
-  handicapSlotDecrease(parkingLot: ParkingLot) {
+  handicapSlotDecrease(parkingLot: ParkingLotListItem) {
     if(!parkingLot.toggleHandicapState) {
       parkingLot.handicapSlots++;
     } else {

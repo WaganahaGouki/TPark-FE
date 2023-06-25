@@ -1,4 +1,4 @@
-export interface ParkingLot {
+export interface ParkingLotListItem {
   name: string;
   zone: string;
   lat: number;
@@ -7,4 +7,7 @@ export interface ParkingLot {
   busSlots: number;
   handicapSlots: number;
   pricePerHour: number;
+  toggleCarState: boolean;
+  toggleBusState: boolean;
+  toggleHandicapState: boolean;
 }

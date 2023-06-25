@@ -5,11 +5,11 @@ import {RequestParkingLotService} from "../../services/request-parking-lot.servi
 import {ParkingLotsService} from "../../services/parking-lots.service";
 
 @Component({
-  selector: 'parking-lot-request-manager',
-  templateUrl: './parking-lot-request-manager.component.html',
-  styleUrls: ['./parking-lot-request-manager.component.css']
+  selector: 'parking-lot-add',
+  templateUrl: './parking-lot-add.component.html',
+  styleUrls: ['./parking-lot-add.component.css']
 })
-export class ParkingLotRequestManagerComponent implements OnInit {
+export class ParkingLotAddComponent implements OnInit {
   addParkingLotForm!: FormGroup
 
   parkingLotsRequests!: any[]
@@ -30,11 +30,11 @@ export class ParkingLotRequestManagerComponent implements OnInit {
       name: ['', Validators.required],
       lat: ['', Validators.required],
       lng: ['', Validators.required],
-      car: ['', Validators.required],
-      bus: ['', Validators.required],
-      handicap: ['', Validators.required],
+      carSlots: ['', Validators.required],
+      busSlots: ['', Validators.required],
+      handicapSlots: ['', Validators.required],
       zone: ['', Validators.required],
-      price: ['', Validators.required]
+      pricePerHour: ['', Validators.required]
     });
   }
 

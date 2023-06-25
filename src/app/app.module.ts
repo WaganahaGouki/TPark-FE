@@ -22,8 +22,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {AccountComponent} from './components/account/account.component';
 import {RequestParkingLotComponent} from './components/request-parking-lot/request-parking-lot.component';
 import {
-  ParkingLotRequestManagerComponent
-} from './components/parking-lot-request-manager/parking-lot-request-manager.component';
+  ParkingLotAddComponent
+} from './components/parking-lot-add/parking-lot-add.component';
 import {NgOptimizedImage} from "@angular/common";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
@@ -46,7 +46,7 @@ const routes: Routes = [
   },
   {
     path: 'addParkingLot',
-    component: ParkingLotRequestManagerComponent
+    component: ParkingLotAddComponent
   },
   /*{
     path: '**',
@@ -62,7 +62,7 @@ const routes: Routes = [
     NavigationComponent,
     AccountComponent,
     RequestParkingLotComponent,
-    ParkingLotRequestManagerComponent,
+    ParkingLotAddComponent,
   ],
   imports: [
     BrowserModule,

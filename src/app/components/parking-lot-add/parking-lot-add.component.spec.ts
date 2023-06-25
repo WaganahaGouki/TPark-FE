@@ -1,16 +1,16 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import {ParkingLotRequestManagerComponent} from './parking-lot-request-manager.component';
+import {ParkingLotAddComponent} from './parking-lot-add.component';
 
 describe('ParkingLotRequestManagerComponent', () => {
-  let component: ParkingLotRequestManagerComponent;
-  let fixture: ComponentFixture<ParkingLotRequestManagerComponent>;
+  let component: ParkingLotAddComponent;
+  let fixture: ComponentFixture<ParkingLotAddComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ParkingLotRequestManagerComponent]
+      declarations: [ParkingLotAddComponent]
     });
-    fixture = TestBed.createComponent(ParkingLotRequestManagerComponent);
+    fixture = TestBed.createComponent(ParkingLotAddComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
