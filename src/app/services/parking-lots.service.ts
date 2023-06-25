@@ -23,4 +23,8 @@ export class ParkingLotsService {
   public updateParkingLot(parkingLot: ParkingLot): Observable<ParkingLot>{
     return this.http.put<ParkingLot>(`${this.apiServerUrl}/parkingLot/update/${parkingLot.name}/${parkingLot.zone}/${parkingLot.lat}/${parkingLot.lng}/${parkingLot.carSlots}/${parkingLot.busSlots}/${parkingLot.handicapSlots}/${parkingLot.pricePerHour}`, parkingLot)
   }
+
+  public deleteParkingLot(parkingLot: ParkingLot) {
+    return this.http.delete(`${this.apiServerUrl}/parkingLot/delete/${parkingLot.name}`)
+  }
 }

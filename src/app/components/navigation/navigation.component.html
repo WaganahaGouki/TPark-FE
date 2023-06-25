@@ -33,6 +33,10 @@
       <mat-icon>save</mat-icon>
       <span>Update parking lot</span>
     </button>
+    <button mat-button class="menu-button" routerLink="/deleteParkingLot" *ngIf="!checkRole()">
+      <mat-icon>location_off</mat-icon>
+      <span>Delete parking lot</span>
+    </button>
   </mat-drawer>
   <mat-drawer-content>
     <div class="content">

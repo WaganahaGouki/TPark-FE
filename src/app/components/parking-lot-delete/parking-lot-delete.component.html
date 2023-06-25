@@ -1,0 +1,17 @@
+<div class="request-manager">
+  <mat-card class="mat-elevation-z12 delete-request-card" *ngIf="!checkRole()">
+    <mat-tab-group mat-stretch-tabs class="example-stretched-tabs">
+      <mat-tab label="Enter the name of the parking lot">
+        <mat-card-content>
+          <form action="" [formGroup]="deleteParkingLotForm">
+            <mat-form-field>
+              <input matInput placeholder="Name" formControlName="name">
+              <mat-icon matSuffix>local_parking</mat-icon>
+            </mat-form-field>
+            <button mat-raised-button color="primary" class="login-button" (click)="deleteParkingLot()">Delete</button>
+          </form>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>
