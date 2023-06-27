@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ParkingLotsService} from "../../services/parking-lots.service";
-import {ParkingLot} from "../../models/parkingLot";
 import {ParkingLotListItem} from "../../models/parkingLotListItem";
 
 @Component({

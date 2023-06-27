@@ -21,14 +21,14 @@ import {NavigationComponent} from './components/navigation/navigation.component'
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {AccountComponent} from './components/account/account.component';
 import {RequestParkingLotComponent} from './components/request-parking-lot/request-parking-lot.component';
-import {
-  ParkingLotAddComponent
-} from './components/parking-lot-add/parking-lot-add.component';
+import {ParkingLotAddComponent} from './components/parking-lot-add/parking-lot-add.component';
 import {NgOptimizedImage} from "@angular/common";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
-import { ParkingLotUpdateComponent } from './components/parking-lot-update/parking-lot-update.component';
-import { ParkingLotDeleteComponent } from './components/parking-lot-delete/parking-lot-delete.component';
-import { ParkingLotRequestDeleteComponent } from './components/parking-lot-request-delete/parking-lot-request-delete.component';
+import {ParkingLotUpdateComponent} from './components/parking-lot-update/parking-lot-update.component';
+import {ParkingLotDeleteComponent} from './components/parking-lot-delete/parking-lot-delete.component';
+import {
+  ParkingLotRequestDeleteComponent
+} from './components/parking-lot-request-delete/parking-lot-request-delete.component';
 
 const routes: Routes = [
   {
